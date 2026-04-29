@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Drone Aerial Photography Services</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { background: #2f2f2f; color: #fff; font-family: 'Montserrat', Arial, sans-serif; }
+    .contact-container { max-width: 1100px; margin: 0 auto; padding: 120px 20px 40px; display: flex; gap: 48px; }
+    .contact-left { flex: 1; }
+    .contact-right { flex: 1; }
+    .contact-title { font-size: 2rem; font-weight: 700; margin-bottom: 18px; }
+    .contact-info { margin-bottom: 32px; line-height: 1.7; }
+    .service-areas { margin-bottom: 18px; }
+    .contact-form label { display: block; margin-bottom: 6px; font-weight: 600; }
+    .contact-form-row { display: flex; gap: 16px; margin-bottom: 16px; }
+    .contact-form-row input { flex: 1; }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 10px; border: none; border-radius: 2px; background: #444; color: #fff; margin-bottom: 8px; font-size: 1rem; }
+    .contact-form textarea { min-height: 70px; resize: vertical; }
+    .contact-form button { width: 100%; background: #c7a15a; color: #fff; border: none; padding: 12px 0; font-size: 1.1rem; font-weight: 600; border-radius: 2px; cursor: pointer; transition: background 0.2s; }
+    .contact-form button:hover { background: #b08a3c; }
+    @media (max-width: 900px) { .contact-container { flex-direction: column; gap: 32px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="index.html"><strong style="color:#fff; font-size:18px;">&larr; Back</strong></a>
+      </div>
+      <nav class="header-center">
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="https://portal.spiro.media/order/corp/order-page" target="_blank" rel="noopener">Pricing</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-outline" href="#">CLIENT LOGIN</a>
+        <a class="btn btn-primary" href="index.html#get-quote">BOOK A SHOOT</a>
+      </div>
+      <span class="menu-toggle">&#9776;</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="contact-container">
+      <div class="contact-left">
+        <div class="contact-title">Don't Hesitate to Reach Out</div>
+        <div class="contact-info">
+          <p>Get in touch with us, and we'd love to discuss your next real estate media project!</p>
+          <div class="service-areas">
+            <strong>Service Areas:</strong><br>
+            Chicago, Naperville, Schaumburg, Oak Park, Evanston, Aurora, and surrounding areas
+          </div>
+          <div style="margin-bottom:10px;">info@yourcompany.com</div>
+          <div>(312) 555-1234</div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <div class="contact-title" style="font-size:1.4rem; margin-bottom:12px;">Contact Us</div>
+        <form class="contact-form" id="contact-form">
+          <div class="contact-form-row">
+            <input type="text" name="first_name" placeholder="First name" required />
+            <input type="text" name="last_name" placeholder="Last name" required />
+          </div>
+          <div class="contact-form-row">
+            <input type="email" name="email" placeholder="Email *" required />
+            <input type="text" name="phone" placeholder="Phone" />
+          </div>
+          <label for="message">Message</label>
+          <textarea name="message" id="message" placeholder="Type your message here..." required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer style="padding: 40px 20px; text-align:center; background:#2f2f2f; color:#fff;">
+    <p style="margin:0;">© 2024 Drone Aerial Photography Services. All rights reserved.</p>
+  </footer>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      alert("Thank you for reaching out! Your message has been received.");
+      this.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="header-left">
+        <a href="index.html"><strong style="color:#fff; font-size:18px;">&larr; Back</strong></a>
+      </div>
+      <nav class="header-center">
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#services">Pricing</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="index.html#get-quote">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-outline" href="#">CLIENT LOGIN</a>
+        <a class="btn btn-primary" href="index.html#get-quote">BOOK A SHOOT</a>
+      </div>
+      <span class="menu-toggle">&#9776;</span>
+    </div>
+  </header>
+
+  <main style="padding: 120px 20px 40px; background: #f8f8f8;">
+    <div class="container">
+      <h1 style="text-align:center; margin-bottom:28px;">Portfolio</h1>
+      <!-- Photos Section -->
+      <section id="photos">
+        <h2 style="text-align:center; margin-bottom:18px;">HDR Photos</h2>
+        <div class="hdr-gallery">
+          <div class="hdr-item"><img src="./DSC01311-HDR.jpg" alt="HDR Photo 1" /></div>
+          <div class="hdr-item"><img src="./DSC01276-HDR.jpg" alt="HDR Photo 2" /></div>
+          <div class="hdr-item"><img src="./DSC00966-HDR.jpg" alt="HDR Photo 3" /></div>
+          <div class="hdr-item"><img src="./DSC01206-HDR-2.jpg" alt="HDR Photo 4" /></div>
+        </div>
+      </section>
+
+      <!-- Vertical Video Section -->
+      <section id="vertical-video" style="margin-top:48px;">
+        <h2 style="text-align:center; margin-bottom:18px;">Vertical Videos</h2>
+        <div class="video-gallery" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+          <div class="video-item" style="width:300px;">
+            <video controls style="width:100%; aspect-ratio:9/16; background:#000;">
+              <source src="vertical1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p style="text-align:center;">Property Walkthrough</p>
+          </div>
+          <div class="video-item" style="width:300px;">
+            <video controls style="width:100%; aspect-ratio:9/16; background:#000;">
+              <source src="vertical2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p style="text-align:center;">Neighborhood Tour</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add more sections as needed -->
+    </div>
+  </main>
+
+  <footer style="padding: 40px 20px; text-align:center; background:#2f2f2f; color:#fff;">
+    <p style="margin:0;">© 2024 Drone Aerial Photography Services. All rights reserved.</p>
+  </footer>
+</body>
+</html>
