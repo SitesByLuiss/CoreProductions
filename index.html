@@ -10,10 +10,11 @@
   <!-- Swiper -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
-  <!-- Your CSS -->
-  <link rel="stylesheet" href="style.css" />
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="style.css" />
 
   <title>Drone Aerial Photography Services</title>
 </head>
@@ -22,153 +23,196 @@
   <header id="home">
     <div class="header-inner">
       <div class="header-left">
-        <img src="core.png" class="logo" alt="Logo" />
+        <a href="index.html" aria-label="Home">
+          <img src="core.png" class="logo" alt="Core Media Logo" />
+        </a>
       </div>
 
-      <nav class="header-center">
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="header-center" id="main-nav">
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="https://portal.spiro.media/order/corp/order-page" target="_blank" rel="noopener">Pricing</a></li>
+          <li>
+            <a href="https://portal.spiro.media/order/corp/order-page" target="_blank" rel="noopener">
+              Pricing
+            </a>
+          </li>
           <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="cinematic-video.html" id="cinematic-video-btn">Cinematic Video</a></li>
-            <li><a href="contact.html">Contact</a></li>
+          <li><a href="cinematic-video.html" id="cinematic-video-btn">Cinematic Video</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
         <a class="btn btn-outline" href="coming-soon.html">CLIENT LOGIN</a>
-        <a class="btn btn-primary" href="#get-quote">BOOK A SHOOT</a>
+        <a
+          class="btn btn-primary"
+          href="https://portal.spiro.media/order/corp/order-page"
+          target="_blank"
+          rel="noopener"
+        >
+          PRICING
+        </a>
       </div>
-
-      <span class="menu-toggle">&#9776;</span>
     </div>
   </header>
 
-    <div class="hero-image">
+  <main>
+    <section class="hero-image">
       <div class="hero-text">
         <h1 class="hero-headline">
           <span>Exceptional Listing Media</span>
           <span>For Agents in</span>
-          <span>Chicago land</span>
+          <span>Chicagoland</span>
         </h1>
 
         <div class="hero-sub">
-          <a href="https://portal.spiro.media/order/corp/order-page" class="btn btn-ghost" target="_blank" rel="noopener">View Packages</a>
+          <a
+            href="https://portal.spiro.media/order/corp/order-page"
+            class="btn btn-ghost"
+            target="_blank"
+            rel="noopener"
+          >
+            View Packages
+          </a>
         </div>
       </div>
-    </div>
+    </section>
 
-  <!-- Moved: Dark-band (We Exist To Serve You, The Agent) now placed here with 'What We Offer' -->
-  <section class="dark-band" id="services-band">
-    <div class="container">
-      <h2 class="dark-band-title">We Exist To Serve You, The Agent</h2>
-      <h3 class="what-we-offer">What We Offer</h3>
+    <section class="dark-band" id="services-band">
+      <div class="container">
+        <h2 class="dark-band-title">We Exist To Serve You, The Agent</h2>
+        <h3 class="what-we-offer">What We Offer</h3>
 
-      <div class="icon-row">
-        <div class="icon-item">
-          <i class="fas fa-clock fa-2x"></i>
-          <p class="icon-label">We Show Up On Time</p>
-        </div>
+        <div class="icon-row">
+          <div class="icon-item">
+            <i class="fas fa-clock fa-2x"></i>
+            <p class="icon-label">We Show Up On Time</p>
+          </div>
 
-        <div class="icon-item">
-          <i class="fas fa-user fa-2x"></i>
-          <p class="icon-label">We Love Our Clients</p>
-        </div>
+          <div class="icon-item">
+            <i class="fas fa-user fa-2x"></i>
+            <p class="icon-label">We Love Our Clients</p>
+          </div>
 
-        <div class="icon-item">
-          <i class="fas fa-check-circle fa-2x"></i>
-          <p class="icon-label">We Are Efficient & Friendly</p>
-        </div>
+          <div class="icon-item">
+            <i class="fas fa-check-circle fa-2x"></i>
+            <p class="icon-label">We Are Efficient & Friendly</p>
+          </div>
 
-        <div class="icon-item">
-          <i class="fas fa-dollar-sign fa-2x"></i>
-          <p class="icon-label">We Have Simple Pricing</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How We Can Serve You (moved below dark-band) -->
-  <section id="how-we-serve" class="how-we-serve">
-    <div class="container">
-      <h2 class="serve-title">How We Can Serve You</h2>
-
-      <div class="serve-grid">
-        <div class="serve-card" style="background-image:url('./DSC01311-HDR.jpg');">
-          <a class="serve-link" href="hdr-photos.html">HDR PHOTOS</a>
-        </div>
-
-        <div class="serve-card" style="background-image:url('https://images.pexels.com/photos/270612/pexels-photo-270612.jpeg');">
-          <a class="serve-link" href="cinematic-video.html" id="cinematic-video-card-btn">CINEMATIC VIDEO</a>
-        </div>
-
-        <div class="serve-card" style="background-image:url('https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg');">
-            <a class="serve-link" href="3d-tours.html">3D TOURS</a>
+          <div class="icon-item">
+            <i class="fas fa-dollar-sign fa-2x"></i>
+            <p class="icon-label">We Have Simple Pricing</p>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="centered-cta" style="margin-top:28px;">
-        <a class="btn listing-media-btn" href="#">Listing Media</a>
-      </div>
-    </div>
-  </section>
+    <section id="how-we-serve" class="how-we-serve">
+      <div class="container">
+        <h2 class="serve-title">How We Can Serve You</h2>
 
-  <!-- Feature / High Performance -->
-  <section class="feature-section">
-    <div class="container feature-grid">
-      <div class="feature-image">
-        <!-- Using the provided high-resolution image file -->
-        <img src="./DSC01311-HDR.jpg" alt="Kitchen" />
-      </div>
+        <div class="serve-grid">
+          <div class="serve-card" style="background-image:url('./DSC01311-HDR.jpg');">
+            <a class="serve-link" href="hdr-photos.html">HDR Photos</a>
+          </div>
 
-      <div class="feature-content">
-        <h3 class="eyebrow">HIGH PERFORMANCE</h3>
-        <h2><span>REAL ESTATE</span></h2>
-        <p>Imagery hits your potential buyer's brain within 13 milliseconds. There's no second opportunity to make a stunning first impression. If your digital content falls short, you risk missing out on fantastic clients.</p>
-        <a href="coming-soon.html" class="btn btn-outline">CREATE AN ACCOUNT</a>
-      </div>
-    </div>
-  </section>
+          <div class="serve-card" style="background-image:url('https://images.pexels.com/photos/270612/pexels-photo-270612.jpeg');">
+            <a class="serve-link" href="cinematic-video.html" id="cinematic-video-card-btn">
+              Cinematic Video
+            </a>
+          </div>
 
-  <!-- Original dark-band removed (moved earlier) -->
-
-  <!-- Testimonials / Satisfied Customers -->
-  <section class="testimonials">
-    <div class="container">
-      <div class="centered-cta">
-        <a class="btn btn-outline" href="#">Listing Media</a>
-      </div>
-
-      <h2 class="testimonials-title">Satisfied Customers</h2>
-
-      <div class="testimonials-grid">
-        <div class="testimonial">
-          <div class="quote">“</div>
-          <p>They are very professional. They show up on time to every shoot and deliver quality photos and video to each without fail.</p>
-          <p class="author">Reagan Heffelfinger | Extreme realty</p>
+          <div class="serve-card" style="background-image:url('https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg');">
+            <a class="serve-link" href="3d-tours.html">3D Tours</a>
+          </div>
         </div>
 
-        <div class="testimonial">
-          <div class="quote">“</div>
-          <p>Cole is incredibly professional and a joy to collaborate with. His work is consistently exceptional, and he never fails to impress. I would wholeheartedly recommend him.</p>
-          <p class="author">Angela Sandoval | Realty of america </p>
-        </div>
-
-        <div class="testimonial">
-          <div class="quote">“</div>
-          <p>Highly recommend Cole/ Prime Property Media for all your photo, video and marketing needs. Always prompt and courteous service, always high quality work with a smile!</p>
-          <p class="author">emily</p>
+        <div class="centered-cta" style="margin-top:28px;">
+          <a
+            class="btn listing-media-btn"
+            href="https://portal.spiro.media/order/corp/order-page"
+            target="_blank"
+            rel="noopener"
+          >
+            Listing Media
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <section class="feature-section">
+      <div class="container feature-grid">
+        <div class="feature-image">
+          <img src="./DSC01311-HDR.jpg" alt="Real estate kitchen photography" />
+        </div>
 
-  <!-- Removed 'Why Choose Us' section -->
+        <div class="feature-content">
+          <h3 class="eyebrow">High Performance</h3>
+          <h2><span>Real Estate</span></h2>
+          <p>
+            Imagery hits your potential buyer's brain within 13 milliseconds.
+            There is no second opportunity to make a stunning first impression.
+            If your digital content falls short, you risk missing out on fantastic clients.
+          </p>
+          <a href="coming-soon.html" class="btn btn-outline">Create An Account</a>
+        </div>
+      </div>
+    </section>
 
-  <!-- Removed 'Our Unique Process' section -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="centered-cta">
+          <a
+            class="btn btn-outline"
+            href="https://portal.spiro.media/order/corp/order-page"
+            target="_blank"
+            rel="noopener"
+          >
+            Listing Media
+          </a>
+        </div>
 
+        <h2 class="testimonials-title">Satisfied Customers</h2>
 
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <div class="quote">“</div>
+            <p>
+              They are very professional. They show up on time to every shoot
+              and deliver quality photos and video to each without fail.
+            </p>
+            <p class="author">Reagan Heffelfinger | Extreme Realty</p>
+          </div>
+
+          <div class="testimonial">
+            <div class="quote">“</div>
+            <p>
+              Cole is incredibly professional and a joy to collaborate with.
+              His work is consistently exceptional, and he never fails to impress.
+              I would wholeheartedly recommend him.
+            </p>
+            <p class="author">Angela Sandoval | Realty of America</p>
+          </div>
+
+          <div class="testimonial">
+            <div class="quote">“</div>
+            <p>
+              Highly recommend Cole / Prime Property Media for all your photo,
+              video, and marketing needs. Always prompt and courteous service,
+              always high quality work with a smile!
+            </p>
+            <p class="author">Emily</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="footer-content">
@@ -177,19 +221,36 @@
         <p>Professional drone photography and videography services tailored to your needs.</p>
 
         <div class="social-media">
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/mediabycore/" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/mediabycore/" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
         </div>
       </div>
 
       <div class="footer-section links">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#why-us">Why Us</a></li>
-          <li><a href="#get-quote">Contact</a></li>
+          <li><a href="#services-band">Services</a></li>
+          <li><a href="#how-we-serve">How We Serve</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li>
+            <a
+              href="https://portal.spiro.media/order/corp/order-page"
+              target="_blank"
+              rel="noopener"
+            >
+              Pricing
+            </a>
+          </li>
         </ul>
       </div>
 
@@ -212,108 +273,127 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
-    <!-- Cinematic Video Popup Script removed: now opens in same tab -->
-
   <script>
-    // EmailJS init
-    (function () {
-      emailjs.init("t6mPaFPBsz1Mi5Z9f");
-    })();
-
-    // Contact form
-    document.getElementById("contact-form").addEventListener("submit", function (event) {
-      event.preventDefault();
-      emailjs.sendForm("service_clmtael", "template_76d32af", this).then(
-        function () {
-          alert("Message sent successfully!");
-        },
-        function (error) {
-          alert("Failed to send the message. Error: " + JSON.stringify(error));
-        }
-      );
-    });
-
-    // Footer contact form
-    document.getElementById("footer-contact-form").addEventListener("submit", function (event) {
-      event.preventDefault();
-      emailjs.sendForm("service_clmtael", "template_76d32af", this).then(
-        function () {
-          alert("Message sent successfully!");
-        },
-        function (error) {
-          alert("Failed to send the message. Error: " + JSON.stringify(error));
-        }
-      );
-    });
-
-    // Mobile menu
     document.addEventListener("DOMContentLoaded", function () {
       const menuToggle = document.querySelector(".menu-toggle");
-      const navigation = document.querySelector("nav");
+      const navigation = document.querySelector(".header-center");
+      const navLinks = document.querySelectorAll(".header-center a");
 
-      function openMenu() {
-        navigation.classList.add("active");
-        menuToggle.style.display = "none";
-      }
+      if (menuToggle && navigation) {
+        menuToggle.addEventListener("click", function (event) {
+          event.stopPropagation();
 
-      function closeMenu() {
-        navigation.classList.remove("active");
-        menuToggle.style.display = "block";
-      }
+          const isOpen = navigation.classList.toggle("active");
+          menuToggle.classList.toggle("active", isOpen);
+          menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
 
-      menuToggle.addEventListener("click", openMenu);
-
-      document.addEventListener("click", function (event) {
-        const isClickInside = navigation.contains(event.target) || menuToggle.contains(event.target);
-        if (!isClickInside) closeMenu();
-      });
-
-      // Swiper
-      new Swiper(".swiper-container", {
-        effect: "coverflow",
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: "auto",
-        loop: true,
-        coverflowEffect: {
-          rotate: 0,
-          stretch: 0,
-          depth: 250,
-          modifier: 1,
-          slideShadows: true,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
-    });
-  </script>
-
-  <!-- Deposit button (NOTE: needs a backend, won't work on GitHub Pages alone) -->
-  <script>
-    const payBtn = document.getElementById("pay-deposit");
-    if (payBtn) {
-      payBtn.addEventListener("click", async () => {
-        try {
-          const res = await fetch("/create-checkout-session", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              item: "Drone Shoot Deposit",
-              amount: 5000
-            }),
+        navLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            navigation.classList.remove("active");
+            menuToggle.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
           });
+        });
 
-          const data = await res.json();
-          if (!res.ok) throw new Error(data.error || "Failed to start checkout");
+        document.addEventListener("click", function (event) {
+          const clickedInsideMenu = navigation.contains(event.target);
+          const clickedToggle = menuToggle.contains(event.target);
 
-          window.location.href = data.url;
-        } catch (err) {
-          alert("Payment setup failed: " + err.message);
-        }
-      });
-    }
+          if (!clickedInsideMenu && !clickedToggle) {
+            navigation.classList.remove("active");
+            menuToggle.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        window.addEventListener("resize", function () {
+          if (window.innerWidth > 768) {
+            navigation.classList.remove("active");
+            menuToggle.classList.remove("active");
+            menuToggle.setAttribute("aria-expanded", "false");
+          }
+        });
+      }
+
+      if (typeof emailjs !== "undefined") {
+        emailjs.init("t6mPaFPBsz1Mi5Z9f");
+      }
+
+      const mainContactForm = document.getElementById("contact-form");
+      const footerContactForm = document.getElementById("footer-contact-form");
+
+      function handleEmailForm(form) {
+        if (!form || typeof emailjs === "undefined") return;
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          emailjs.sendForm("service_clmtael", "template_76d32af", form).then(
+            function () {
+              alert("Message sent successfully!");
+              form.reset();
+            },
+            function (error) {
+              alert("Failed to send the message. Error: " + JSON.stringify(error));
+            }
+          );
+        });
+      }
+
+      handleEmailForm(mainContactForm);
+      handleEmailForm(footerContactForm);
+
+      const swiperContainer = document.querySelector(".swiper-container");
+
+      if (swiperContainer && typeof Swiper !== "undefined") {
+        new Swiper(".swiper-container", {
+          effect: "coverflow",
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: "auto",
+          loop: true,
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 250,
+            modifier: 1,
+            slideShadows: true
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+          }
+        });
+      }
+
+      const payBtn = document.getElementById("pay-deposit");
+
+      if (payBtn) {
+        payBtn.addEventListener("click", async function () {
+          try {
+            const res = await fetch("/create-checkout-session", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                item: "Drone Shoot Deposit",
+                amount: 5000
+              })
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+              throw new Error(data.error || "Failed to start checkout");
+            }
+
+            window.location.href = data.url;
+          } catch (err) {
+            alert("Payment setup failed: " + err.message);
+          }
+        });
+      }
+    });
   </script>
 </body>
 </html>
