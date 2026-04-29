@@ -1279,3 +1279,513 @@ footer {
     display: none;
   }
 }
+/* =========================================================
+   RESPONSIVE FIXES + MOBILE MENU PATCH
+   Added to fix mobile layout, portfolio sizing, and dropdown nav.
+   ========================================================= */
+
+:root {
+  --site-header-height: 76px;
+  --site-blue: #4a90e2;
+  --site-dark: #333;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  min-width: 0;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* Keep buttons from becoming weird little rectangles on mobile, because apparently that was on the menu. */
+.btn,
+.book-link,
+.get-started,
+.listing-media-btn,
+#pay-deposit {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+/* Header polish */
+.header-inner {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.header-actions .btn-primary,
+.header-actions .btn-outline {
+  border: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+.header-actions .btn-primary {
+  background: var(--site-blue);
+  color: #fff;
+}
+
+.header-actions .btn-primary:hover,
+.header-actions .btn-outline:hover {
+  text-decoration: none;
+  filter: brightness(0.94);
+}
+
+/* Portfolio / HDR gallery fixes */
+.hdr-gallery,
+.portfolio-gallery,
+.portfolio-grid,
+.video-gallery,
+.vertical-video-gallery {
+  width: min(100%, 1500px);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(14px, 3vw, 28px);
+  padding-right: clamp(14px, 3vw, 28px);
+}
+
+.hdr-gallery,
+.portfolio-gallery,
+.portfolio-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+}
+
+.hdr-item,
+.portfolio-item,
+.video-item {
+  width: 100%;
+  min-width: 0;
+}
+
+.hdr-item img,
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Vertical video page support */
+.video-gallery,
+.vertical-video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(16px, 3vw, 28px);
+}
+
+.video-item video,
+.vertical-video-gallery video,
+.video-gallery video {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  background: #000;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Better package responsiveness */
+.packages-grid,
+.a-la-carte-grid,
+.service-container {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+
+.package-card .package-footer {
+  flex-wrap: wrap;
+}
+
+.package-card .package-footer .btn {
+  flex: 0 0 auto;
+}
+
+/* Mobile nav backdrop controlled by site-fixes.js */
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 1190;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+body.nav-open .nav-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hamburger button */
+.menu-toggle {
+  border: 0;
+  appearance: none;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 99px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Tablet / mobile nav fix.
+   This overrides the older rule that set nav.header-center to display:none under 860px. */
+@media (max-width: 860px) {
+  body {
+    padding-top: 68px;
+  }
+
+  .header-inner {
+    min-height: 68px;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    padding: 8px 14px;
+  }
+
+  .logo {
+    height: 52px;
+    max-width: 170px;
+  }
+
+  .header-actions {
+    justify-self: end;
+    gap: 8px;
+    padding-right: 58px;
+  }
+
+  .header-actions .btn-outline {
+    display: none;
+  }
+
+  .header-actions .btn-primary {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .menu-toggle {
+    display: inline-flex !important;
+    position: absolute !important;
+    right: 14px !important;
+    top: 50% !important;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 8px;
+    background: var(--site-blue);
+    color: #fff;
+    cursor: pointer;
+    z-index: 1305;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+  }
+
+  header nav.header-center {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: min(82vw, 340px) !important;
+    max-width: 340px;
+    height: 100dvh !important;
+    background: #111 !important;
+    transform: translateX(-105%);
+    transition: transform 0.28s ease;
+    padding: 92px 20px 26px !important;
+    z-index: 1300 !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    overflow-y: auto;
+    box-shadow: 12px 0 30px rgba(0, 0, 0, 0.35);
+  }
+
+  header nav.header-center.active,
+  header nav.header-center.is-open {
+    left: 0 !important;
+    transform: translateX(0);
+  }
+
+  header nav.header-center ul {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100%;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+  }
+
+  header nav.header-center ul li {
+    width: 100%;
+    margin: 0;
+  }
+
+  header nav.header-center ul li a {
+    display: block;
+    width: 100%;
+    padding: 14px 12px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  header nav.header-center ul li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+  }
+
+  .hero-image {
+    min-height: 480px;
+    height: calc(100svh - 68px);
+    background-position: center;
+  }
+
+  .hero-text {
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: none;
+    padding: 0 18px;
+  }
+
+  .hero-headline span {
+    width: fit-content;
+    max-width: 100%;
+    font-size: clamp(28px, 10vw, 54px);
+    padding: 12px 16px;
+    line-height: 0.98;
+  }
+
+  .hero-sub .btn-ghost,
+  .btn-ghost {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 0 18px;
+  }
+
+  .feature-content {
+    padding: 0;
+  }
+
+  .feature-content h2,
+  .packages-hero h1,
+  .a-la-carte-title {
+    font-size: clamp(28px, 8vw, 42px);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .icon-row {
+    flex-direction: column;
+  }
+
+  .serve-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .serve-card {
+    height: clamp(260px, 62vw, 420px);
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-top: 64px;
+  }
+
+  .header-inner {
+    min-height: 64px;
+    grid-template-columns: auto 1fr auto;
+    padding: 7px 12px;
+  }
+
+  .logo {
+    height: 46px;
+    max-width: 145px;
+  }
+
+  .header-actions {
+    padding-right: 54px;
+  }
+
+  .header-actions .btn-primary {
+    font-size: 11px;
+    padding: 8px 10px;
+    min-height: 38px;
+  }
+
+  .menu-toggle {
+    right: 12px !important;
+    width: 42px;
+    height: 42px;
+  }
+
+  header nav.header-center {
+    width: 86vw !important;
+    padding-top: 84px !important;
+  }
+
+  .hero-image {
+    min-height: 430px;
+    height: calc(100svh - 64px);
+  }
+
+  .hero-headline span {
+    font-size: clamp(24px, 11vw, 42px);
+    padding: 10px 13px;
+    margin-bottom: 9px;
+  }
+
+  .hero-sub {
+    margin-top: 12px;
+  }
+
+  .hdr-gallery,
+  .portfolio-gallery,
+  .portfolio-grid,
+  .video-gallery,
+  .vertical-video-gallery {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .hdr-item img,
+  .portfolio-item img {
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  }
+
+  .packages-hero {
+    padding: 44px 16px 34px;
+  }
+
+  .packages-grid,
+  .a-la-carte-grid,
+  .service-container {
+    gap: 16px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .package-card .package-header h2 {
+    font-size: clamp(34px, 12vw, 48px);
+  }
+
+  .package-card .package-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .package-card .package-footer .btn,
+  .book-link,
+  .get-started,
+  .listing-media-btn,
+  #pay-deposit {
+    width: 100%;
+  }
+
+  .a-la-carte-card img,
+  .service-box img {
+    height: clamp(170px, 52vw, 230px);
+  }
+
+  #why-us .swiper-slide.reason-card {
+    min-width: 86vw;
+    width: 86vw !important;
+    height: auto;
+    min-height: 260px;
+  }
+
+  .step {
+    width: calc(100% - 24px);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 18px;
+  }
+
+  .serve-title {
+    font-size: 24px;
+    color: #fff;
+  }
+
+  .serve-link {
+    width: calc(100% - 34px);
+    max-width: 300px;
+  }
+
+  .footer-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  .header-actions .btn-primary {
+    display: none;
+  }
+
+  .header-actions {
+    padding-right: 46px;
+  }
+
+  .logo {
+    max-width: 132px;
+  }
+
+  .hero-headline span {
+    font-size: clamp(22px, 10vw, 36px);
+  }
+}
