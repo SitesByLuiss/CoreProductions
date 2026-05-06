@@ -7,61 +7,98 @@
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-  <!-- Swiper -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 
   <!-- Your CSS -->
   <link rel="stylesheet" href="style.css" />
 
+  <title>Portfolio | Core Media</title>
+
   <style>
-    /* Recent Work Photo Gallery */
-    .recent-work {
+    body {
       background: #111;
-      padding: 80px 20px;
       color: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
     }
 
-    .recent-work .container {
-      max-width: 1200px;
+    .portfolio-page {
+      background: #111;
+      min-height: 100vh;
+      padding-top: 120px;
+    }
+
+    .portfolio-hero {
+      padding: 80px 20px 55px;
+      text-align: center;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.85)),
+        url("./DJI_20260317175335_0083_D.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .portfolio-hero h1 {
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      font-weight: 800;
+      margin: 0 0 14px;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+    }
+
+    .portfolio-hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .portfolio-section {
+      padding: 70px 20px 90px;
+    }
+
+    .portfolio-container {
+      max-width: 1250px;
       margin: 0 auto;
     }
 
-    .recent-work-title {
+    .portfolio-header {
       text-align: center;
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      font-weight: 800;
-      margin-bottom: 12px;
-      letter-spacing: -1px;
+      margin-bottom: 40px;
     }
 
-    .recent-work-subtitle {
-      text-align: center;
-      max-width: 680px;
-      margin: 0 auto 42px;
+    .portfolio-header h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: 800;
+      margin: 0 0 12px;
+    }
+
+    .portfolio-header p {
+      max-width: 700px;
+      margin: 0 auto;
       color: rgba(255, 255, 255, 0.72);
-      font-size: 1rem;
       line-height: 1.7;
     }
 
-    .recent-work-grid {
+    .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .recent-work-item {
+    .portfolio-item {
       position: relative;
       overflow: hidden;
       border-radius: 18px;
       background: #222;
       aspect-ratio: 4 / 3;
       box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+      cursor: pointer;
     }
 
-    .recent-work-item img {
+    .portfolio-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -69,34 +106,105 @@
       transition: transform 0.45s ease, filter 0.45s ease;
     }
 
-    .recent-work-item:hover img {
+    .portfolio-item:hover img {
       transform: scale(1.06);
-      filter: brightness(0.85);
+      filter: brightness(0.78);
     }
 
-    @media (max-width: 900px) {
-      .recent-work-grid {
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+      display: flex;
+      align-items: flex-end;
+      padding: 22px;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-overlay span {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .portfolio-cta {
+      text-align: center;
+      margin-top: 45px;
+    }
+
+    .portfolio-lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .portfolio-lightbox.active {
+      display: flex;
+    }
+
+    .portfolio-lightbox img {
+      max-width: 95%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 14px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 22px;
+      right: 28px;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 2.5rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    @media (max-width: 950px) {
+      .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 560px) {
-      .recent-work {
-        padding: 60px 16px;
+    @media (max-width: 600px) {
+      .portfolio-page {
+        padding-top: 95px;
       }
 
-      .recent-work-grid {
+      .portfolio-hero {
+        padding: 65px 18px 45px;
+      }
+
+      .portfolio-section {
+        padding: 55px 16px 70px;
+      }
+
+      .portfolio-grid {
         grid-template-columns: 1fr;
         gap: 16px;
       }
 
-      .recent-work-item {
+      .portfolio-item {
         border-radius: 14px;
+      }
+
+      .portfolio-overlay {
+        opacity: 1;
       }
     }
   </style>
-
-  <title>Drone Aerial Photography Services</title>
 </head>
 
 <body>
@@ -116,7 +224,7 @@
 
       <nav class="header-center" id="main-nav">
         <ul>
-          <li><a href="#home">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li>
             <a href="https://portal.spiro.media/order/corp/order-page" target="_blank" rel="noopener">
               Pricing
@@ -142,19 +250,71 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero-image">
-      <div class="hero-text">
-        <h1 class="hero-headline">
-          <span>Exceptional Listing Media</span>
-          <span>For Agents in</span>
-          <span>Chicagoland</span>
-        </h1>
+  <main class="portfolio-page">
+    <section class="portfolio-hero">
+      <h1>Portfolio</h1>
+      <p>
+        High-quality real estate photography, HDR interiors, and drone media created for listings across Chicagoland.
+      </p>
+    </section>
 
-        <div class="hero-sub">
+    <section class="portfolio-section">
+      <div class="portfolio-container">
+        <div class="portfolio-header">
+          <h2>Featured Work</h2>
+          <p>
+            A collection of listing photos designed to make properties look clean, professional, and ready to sell.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <img src="./DJI_20260317175335_0083_D.jpg" alt="Drone aerial real estate photography" loading="lazy" />
+            <div class="portfolio-overlay">
+              <span>Drone Aerial</span>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <img src="./DSC00831-HDR.jpg" alt="HDR real estate interior photography" loading="lazy" />
+            <div class="portfolio-overlay">
+              <span>HDR Interior</span>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <img src="./DSC00889.jpg" alt="Real estate photography sample" loading="lazy" />
+            <div class="portfolio-overlay">
+              <span>Listing Photo</span>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <img src="./DSC01261-HDR.jpg" alt="HDR real estate listing photo" loading="lazy" />
+            <div class="portfolio-overlay">
+              <span>HDR Listing</span>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <img src="./DSC01336-HDR-2.jpg" alt="HDR real estate room photography" loading="lazy" />
+            <div class="portfolio-overlay">
+              <span>Property Media</span>
+            </div>
+          </div>
+
+          <div class="portfolio-item">
+            <img src="./DSC01459-HDR.jpg" alt="HDR real estate property photography" loading="lazy" />
+            <div class="portfolio-overlay">
+              <span>Real Estate HDR</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-cta">
           <a
+            class="btn btn-primary"
             href="https://portal.spiro.media/order/corp/order-page"
-            class="btn btn-ghost"
             target="_blank"
             rel="noopener"
           >
@@ -163,171 +323,12 @@
         </div>
       </div>
     </section>
-
-    <section class="dark-band" id="services-band">
-      <div class="container">
-        <h2 class="dark-band-title">We Exist To Serve You, The Agent</h2>
-        <h3 class="what-we-offer">What We Offer</h3>
-
-        <div class="icon-row">
-          <div class="icon-item">
-            <i class="fas fa-clock fa-2x"></i>
-            <p class="icon-label">We Show Up On Time</p>
-          </div>
-
-          <div class="icon-item">
-            <i class="fas fa-user fa-2x"></i>
-            <p class="icon-label">We Love Our Clients</p>
-          </div>
-
-          <div class="icon-item">
-            <i class="fas fa-check-circle fa-2x"></i>
-            <p class="icon-label">We Are Efficient & Friendly</p>
-          </div>
-
-          <div class="icon-item">
-            <i class="fas fa-dollar-sign fa-2x"></i>
-            <p class="icon-label">We Have Simple Pricing</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="how-we-serve" class="how-we-serve">
-      <div class="container">
-        <h2 class="serve-title">How We Can Serve You</h2>
-
-        <div class="serve-grid">
-          <div class="serve-card" style="background-image:url('./DSC01311-HDR.jpg');">
-            <a class="serve-link" href="hdr-photos.html">HDR Photos</a>
-          </div>
-
-          <div class="serve-card" style="background-image:url('https://images.pexels.com/photos/270612/pexels-photo-270612.jpeg');">
-            <a class="serve-link" href="cinematic-video.html" id="cinematic-video-card-btn">
-              Cinematic Video
-            </a>
-          </div>
-
-          <div class="serve-card" style="background-image:url('https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg');">
-            <a class="serve-link" href="3d-tours.html">3D Tours</a>
-          </div>
-        </div>
-
-        <div class="centered-cta" style="margin-top:28px;">
-          <a
-            class="btn listing-media-btn"
-            href="https://portal.spiro.media/order/corp/order-page"
-            target="_blank"
-            rel="noopener"
-          >
-            Listing Media
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="recent-work" id="recent-work">
-      <div class="container">
-        <h2 class="recent-work-title">Recent Work</h2>
-        <p class="recent-work-subtitle">
-          A few recent shots from our real estate media projects across Chicagoland.
-        </p>
-
-        <div class="recent-work-grid">
-          <div class="recent-work-item">
-            <img src="./DJI_20260317175335_0083_D.jpg" alt="Drone aerial real estate photo" loading="lazy" />
-          </div>
-
-          <div class="recent-work-item">
-            <img src="./DSC00831-HDR.jpg" alt="HDR real estate interior photo" loading="lazy" />
-          </div>
-
-          <div class="recent-work-item">
-            <img src="./DSC00889.jpg" alt="Real estate photography sample" loading="lazy" />
-          </div>
-
-          <div class="recent-work-item">
-            <img src="./DSC01261-HDR.jpg" alt="HDR real estate room photo" loading="lazy" />
-          </div>
-
-          <div class="recent-work-item">
-            <img src="./DSC01336-HDR-2.jpg" alt="HDR real estate listing photo" loading="lazy" />
-          </div>
-
-          <div class="recent-work-item">
-            <img src="./DSC01459-HDR.jpg" alt="HDR property photography sample" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="feature-section">
-      <div class="container feature-grid">
-        <div class="feature-image">
-          <img src="./DSC01311-HDR.jpg" alt="Real estate kitchen photography" />
-        </div>
-
-        <div class="feature-content">
-          <h3 class="eyebrow">High Performance</h3>
-          <h2><span>Real Estate</span></h2>
-          <p>
-            Imagery hits your potential buyer's brain within 13 milliseconds.
-            There is no second opportunity to make a stunning first impression.
-            If your digital content falls short, you risk missing out on fantastic clients.
-          </p>
-          <a href="coming-soon.html" class="btn btn-outline">Create An Account</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonials">
-      <div class="container">
-        <div class="centered-cta">
-          <a
-            class="btn btn-outline"
-            href="https://portal.spiro.media/order/corp/order-page"
-            target="_blank"
-            rel="noopener"
-          >
-            Listing Media
-          </a>
-        </div>
-
-        <h2 class="testimonials-title">Satisfied Customers</h2>
-
-        <div class="testimonials-grid">
-          <div class="testimonial">
-            <div class="quote">“</div>
-            <p>
-              They are very professional. They show up on time to every shoot
-              and deliver quality photos and video to each without fail.
-            </p>
-            <p class="author">Reagan Heffelfinger | Extreme Realty</p>
-          </div>
-
-          <div class="testimonial">
-            <div class="quote">“</div>
-            <p>
-              Cole is incredibly professional and a joy to collaborate with.
-              His work is consistently exceptional, and he never fails to impress.
-              I would wholeheartedly recommend him.
-            </p>
-            <p class="author">Angela Sandoval | Realty of America</p>
-          </div>
-
-          <div class="testimonial">
-            <div class="quote">“</div>
-            <p>
-              Highly recommend Cole / Prime Property Media for all your photo,
-              video, and marketing needs. Always prompt and courteous service,
-              always high quality work with a smile!
-            </p>
-            <p class="author">Emily</p>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
+
+  <div class="portfolio-lightbox" id="portfolio-lightbox">
+    <button class="lightbox-close" type="button" aria-label="Close image">&times;</button>
+    <img src="" alt="Expanded portfolio image" id="lightbox-image" />
+  </div>
 
   <footer>
     <div class="footer-content">
@@ -358,9 +359,9 @@
         <h3>Quick Links</h3>
 
         <ul>
-          <li><a href="#services-band">Services</a></li>
-          <li><a href="#how-we-serve">How We Serve</a></li>
-          <li><a href="#recent-work">Recent Work</a></li>
+          <li><a href="index.html#services-band">Services</a></li>
+          <li><a href="index.html#how-we-serve">How We Serve</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li>
             <a
@@ -385,8 +386,8 @@
           <input type="email" name="email" placeholder="Your Email" required />
           <textarea name="message" placeholder="Message" required></textarea>
 
-          <input type="hidden" name="_subject" value="New website footer contact submission" />
-          <input type="hidden" name="form_location" value="Homepage footer" />
+          <input type="hidden" name="_subject" value="New website portfolio contact submission" />
+          <input type="hidden" name="form_location" value="Portfolio footer" />
 
           <button type="submit" id="footer-submit-btn">Send</button>
 
@@ -399,9 +400,6 @@
       <p>© 2024 Drone Aerial Photography Services. All rights reserved.</p>
     </div>
   </footer>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -495,55 +493,41 @@
         });
       }
 
-      const swiperContainer = document.querySelector(".swiper-container");
+      const portfolioImages = document.querySelectorAll(".portfolio-item img");
+      const lightbox = document.getElementById("portfolio-lightbox");
+      const lightboxImage = document.getElementById("lightbox-image");
+      const closeBtn = document.querySelector(".lightbox-close");
 
-      if (swiperContainer && typeof Swiper !== "undefined") {
-        new Swiper(".swiper-container", {
-          effect: "coverflow",
-          grabCursor: true,
-          centeredSlides: true,
-          slidesPerView: "auto",
-          loop: true,
-          coverflowEffect: {
-            rotate: 0,
-            stretch: 0,
-            depth: 250,
-            modifier: 1,
-            slideShadows: true
-          },
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true
+      portfolioImages.forEach(function (image) {
+        image.addEventListener("click", function () {
+          lightboxImage.src = image.src;
+          lightboxImage.alt = image.alt;
+          lightbox.classList.add("active");
+        });
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener("click", function () {
+          lightbox.classList.remove("active");
+          lightboxImage.src = "";
+        });
+      }
+
+      if (lightbox) {
+        lightbox.addEventListener("click", function (event) {
+          if (event.target === lightbox) {
+            lightbox.classList.remove("active");
+            lightboxImage.src = "";
           }
         });
       }
 
-      const payBtn = document.getElementById("pay-deposit");
-
-      if (payBtn) {
-        payBtn.addEventListener("click", async function () {
-          try {
-            const res = await fetch("/create-checkout-session", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                item: "Drone Shoot Deposit",
-                amount: 5000
-              })
-            });
-
-            const data = await res.json();
-
-            if (!res.ok) {
-              throw new Error(data.error || "Failed to start checkout");
-            }
-
-            window.location.href = data.url;
-          } catch (err) {
-            alert("Payment setup failed: " + err.message);
-          }
-        });
-      }
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && lightbox.classList.contains("active")) {
+          lightbox.classList.remove("active");
+          lightboxImage.src = "";
+        }
+      });
     });
   </script>
 </body>
