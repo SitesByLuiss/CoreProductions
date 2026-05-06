@@ -16,6 +16,45 @@
   <!-- Your CSS -->
   <link rel="stylesheet" href="style.css" />
 
+  <!-- Mobile Icon Layout Fix -->
+  <style>
+    @media (max-width: 768px) {
+      #services-band .icon-row {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 24px 16px !important;
+        justify-items: center;
+        align-items: start;
+      }
+
+      #services-band .icon-item {
+        width: 100%;
+        max-width: 180px;
+        text-align: center;
+      }
+
+      #services-band .icon-label {
+        font-size: 0.85rem;
+        line-height: 1.3;
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      #services-band .icon-row {
+        gap: 20px 10px !important;
+      }
+
+      #services-band .icon-item {
+        max-width: 150px;
+      }
+
+      #services-band .icon-label {
+        font-size: 0.78rem;
+      }
+    }
+  </style>
+
   <title>Drone Aerial Photography Services</title>
 </head>
 
