@@ -368,19 +368,7 @@ header nav.header-center ul li a:hover {
   color: var(--brand-white);
 }
 
-/* Dark band */
-.dark-band {
-  background: var(--brand-gray-850);
-  color: var(--brand-white);
-  padding: 48px 0;
-}
 
-.dark-band-title {
-  text-align: center;
-  color: var(--brand-white);
-  margin: 0 0 28px;
-  font-size: 28px;
-}
 
 .what-we-offer {
   color: var(--brand-blue);
