@@ -257,7 +257,7 @@ header nav.header-center ul li a:hover {
 /* Hero */
 .hero-image {
   position: relative;
-  background-image: url("./DSC01276-HDR.jpg"), url("https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg");
+  background-image: url("./DSC01276-HDR.jpg");
   height: 84vh;
   min-height: 560px;
   background-position: center;
